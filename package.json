@@ -10,9 +10,9 @@
   "scripts": {
     "test": "ts-node ./test/index.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["terminal", "tui", "library", "text"],
+  "author": "samu.lol",
+  "license": "GPL-3.0-only",
   "devDependencies": {
     "@types/node": "^22.7.9"
   }

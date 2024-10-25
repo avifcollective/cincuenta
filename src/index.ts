@@ -128,8 +128,11 @@ export class HandleOutput {
 
         process.stdout.write('┌' + "─".repeat(d.x - 2) + '┐\n')
         lines.forEach((e) => {
-            process.stdout.write(('│' + e + '│\n'))
+            console.log(e.length)
+            console.log(e.replace(/\\\\\$([A-z]|_|-)/gi, ""))
+            process.stdout.write(('│' + e.padEnd(d.x - (e.replace(/\\\\\$([A-z]|_|-)/gi, "").length) - 2, ' ') + '│\n'))
         })
+        if(lines.length !== d.y) process.stdout.write(('│' + ' '.repeat(d.x - 2) + '│\n').repeat(d.y - lines.length - 4))
         process.stdout.write('└' + "─".repeat(d.x - 2) + '┘\n')
     }
 }
